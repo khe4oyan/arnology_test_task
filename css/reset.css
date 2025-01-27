@@ -9,11 +9,3 @@ body {
   min-height: 100dvh;
   background: var(--white);
 }
-
-button, input {
-  outline: none;
-}
-
-button:hover {
-  cursor: pointer;
-}

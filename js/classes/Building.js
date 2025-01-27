@@ -5,14 +5,19 @@ class Building {
   #elevators;
   #floors;
 
-  constructor(floorsCount) {
+  constructor(floorsCount, elevatorCount = 3) {
     // init state
     this.#elevators = [];
     this.#floors = [];
 
+    // Получить значение переменной --floorHeight
+    const root = document.documentElement;
+    root.style.setProperty("--floorsCount", floorsCount);
+    root.style.setProperty("--elevatorCount", elevatorCount);
+
     // create elevators(const 3)
-    for (let i = 0; i < 3; ++i) {
-      this.#elevators.push(new Elevator(this));
+    for (let i = 0; i < elevatorCount; ++i) {
+      this.#elevators.push(new Elevator());
     }
 
     // create floors
@@ -22,10 +27,22 @@ class Building {
   }
 
   callFrom(floorNum) {
-    console.log(`Call Elevator from: ${floorNum}`);
+    let usableElevatorInd = 0;
+    let minRange = Infinity;
 
-    // floorNum start from 0 to 5
-    // TODO
+    // calculating elevator min range to floor
+    for (let i = 0; i < this.#elevators.length; ++i) {
+      const elevator = this.#elevators[i];
+      if (elevator.isStopped) {
+        const rangToFloor = elevator.rangToFloor(floorNum);
+        if (rangToFloor < minRange) {
+          minRange = rangToFloor;
+          usableElevatorInd = i;
+        }
+      }
+    }
+
+    this.#elevators[usableElevatorInd].moveTo = floorNum;
   }
 
   renderDOM() {

@@ -1,6 +1,6 @@
 .elevators {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--elevatorCount), 1fr);
   gap: 5px;
   width: fit-content;
   height: calc(var(--floorsCount) * var(--floorHeight));
@@ -13,12 +13,12 @@
 }
 
 .elevators__elevator {
-  --currentFloor: 1;
+  transition: var(--movingSeconds) linear;
 
   position: absolute;
   left: 0;
   right: 0;
-  top: calc((6 - var(--currentFloor)) * var(--floorHeight));
+  top: calc((var(--floorsCount) - var(--currentFloor)) * var(--floorHeight));
   margin: auto;
   height: var(--floorHeight);
   width: 30px;
@@ -30,7 +30,3 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
-
-/* .elevators__elevatorMine:nth-child(1) .elevators__elevator { --currentFloor: 4;}
-.elevators__elevatorMine:nth-child(2) .elevators__elevator { --currentFloor: 5;}
-.elevators__elevatorMine:nth-child(3) .elevators__elevator { --currentFloor: 2;} */

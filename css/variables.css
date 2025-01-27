@@ -3,6 +3,12 @@
   --black: #000;
   --personColor: rgb(174, 174, 174);
 
+  /* general options */
   --floorHeight: 50px;
-  --floorsCount: 6;
+  --floorsCount: -1; /* set in JS */
+  --elevatorCount: -1; /* set in JS */
+
+  /* for elevator */
+  --currentFloor: 1;
+  --movingSeconds: 1s; 
 }
