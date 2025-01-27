@@ -1,0 +1,20 @@
+.floors {
+  display: flex;
+  flex-direction: column;
+}
+.floors__floor {
+  height: var(--floorHeight);
+  width: 400px;
+  box-shadow: inset 0px -2px var(--black);
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding-bottom: 7px;
+}
+.person {
+  --size: 20px;
+  height: var(--size);
+  width: var(--size);
+  background-color: var(--personColor);
+  border-radius: 50%;
+}

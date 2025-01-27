@@ -1,0 +1,12 @@
+@import url(css/variables.css);
+@import url(css/reset.css);
+@import url(css/elevators.css);
+@import url(css/floors.css);
+
+.building {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  max-width: 600px;
+  gap: 10px;
+}

@@ -1,0 +1,8 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --personColor: rgb(174, 174, 174);
+
+  --floorHeight: 50px;
+  --floorsCount: 6;
+}

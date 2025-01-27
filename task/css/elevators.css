@@ -1,0 +1,36 @@
+.elevators {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  width: fit-content;
+  height: calc(var(--floorsCount) * var(--floorHeight));
+}
+
+.elevators__elevatorMine {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 45%, var(--black) 52%, rgba(0, 0, 0, 0) 57%);
+  width: 40px;
+  position: relative;
+}
+
+.elevators__elevator {
+  --currentFloor: 1;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc((6 - var(--currentFloor)) * var(--floorHeight));
+  margin: auto;
+  height: var(--floorHeight);
+  width: 30px;
+  background: var(--white);
+  border: 2px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* .elevators__elevatorMine:nth-child(1) .elevators__elevator { --currentFloor: 4;}
+.elevators__elevatorMine:nth-child(2) .elevators__elevator { --currentFloor: 5;}
+.elevators__elevatorMine:nth-child(3) .elevators__elevator { --currentFloor: 2;} */
