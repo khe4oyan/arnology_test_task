@@ -1,5 +1,3 @@
-// FIFO principe
-
 class Floor {
   #building_ref;
   #floorNumber;
