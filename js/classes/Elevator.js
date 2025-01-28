@@ -47,14 +47,13 @@ class Elevator {
     const movingSeconds = this.rangToFloor(floorNum);
 
     this.#elevatorDOM.style.setProperty("--movingSeconds", `${movingSeconds + 1}s`);
+    this.#elevatorDOM.style.setProperty('--currentFloor', floorNum + 1);
     
     setTimeout(() => {
       this.#currentFloor = floorNum;
       this.#state = Elevator.states.STOPPED;
     }, movingSeconds * 1000);
     
-    this.#elevatorDOM.style.setProperty("--movingSeconds", `${movingSeconds + 1}s`);
-    this.#elevatorDOM.style.setProperty('--currentFloor', floorNum + 1);
   }
 
   get isMoving() {
